@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ameerdhi7</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@0.7.4/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<ul class="text-white fixed flex w-full mt-2  justify-center" style="filter: invert(1)">
+    <li class="lg:mx-16"><a target="_blank" href="">
+        <img width="30px" class="icon-hover"
+             src="assets/icons/social/face.svg"
+             alt="">
+    </a>
+    </li>
+    <li class="lg:mx-16">
+        <a target="_blank" href="https://github.com/ameerdhi7">
+            <img class="icon-hover"
+                 src="assets/icons/social/github.svg"
+                 alt=""></a></li>
+    <li class="lg:mx-16"><a target="_blank" href=""><img class="icon-hover"
+                                                         src="assets/icons/social/youtube.svg" alt=""></a></li>
+    <li class="lg:mx-16"><a target="_blank" href=""><img class="icon-hover"
+                                                         src="assets/icons/social/insta.svg"
+                                                         alt=""></a></li>
+</ul>
+<main>
+    <div>
+        <button id="dark-toggle" onclick='handleDarkMode()' class="p-3  fixed  border-white rounded-lg text-white">
+            <img src="assets/icons/dark-button.svg" alt="" width="30px">
+        </button>
+
+        <div class="flex primary lg:flex-row md:flex-row  flex-col h-screen  justify-center  text-center w-full">
+            <div style="transition: all;"
+                 class="items-center sm:w-full w-full sm:w-full lg:w-1/2">
+                <h1 class="text-center text-white mt-16  title">Hey there!</h1>
+                <p class="text-white intro-text text-lg lg:text-2xl mx-3 ">
+                    i'm a full-stack web developer aim to develop
+                    and create web applications
+                    mainly with Laravel PHP framework, have a very good knowledge to produce modern user interfaces with
+                    user
+                    experience UX using modern Frameworks such as Vue.js <span><img
+                        style="display:inline ;width: 30px;height: 30px"
+                        src="/icons/social/vue.png" alt=""></span>,
+                    Tailwind CSS, Bootstrap, Webpack, Blade view engine, I
+                    also create Restful APIS to manage resources stored in the database.
+                </p>
+                <a target="_blank" href="https://resume.io/r/nOBCVDTsC" id="resume-button"
+                 class="p-3 border-white  hover:rounded-b-full d-inline-block secondary  mt-3 rounded-lg text-white  mb-2">Open
+                    My Resume
+                </a>
+            </div>
+            <div class="w-full secondary lg:w-1/2 h-screen justify-center">
+                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_r81jI1.json" background="transparent"
+                               class="lottie" speed="1" loop autoplay></lottie-player>
+                <h1 class="text-white text-4xl   text-center">Ameer Dhiaa</h1>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    handleDarkMode();
+
+    function handleDarkMode() {
+        let darkModeButton = document.getElementById("dark-toggle");
+        let primaryTags = document.getElementsByClassName("primary");
+        let secondaryTags = document.getElementsByClassName("secondary");
+        localStorage.hasOwnProperty("darkModeEnabled") ? disableDarkMode(darkModeButton, primaryTags, secondaryTags) : enableDarkMode(darkModeButton, primaryTags, secondaryTags);
+    }
+
+    function enableDarkMode(darkModeButton, primaryTags, secondaryTags) {
+        localStorage.setItem("darkModeEnabled", true);
+        darkModeButton.classList.add("invert");
+        for (let tag of primaryTags) {
+            tag.classList.add("dark");
+        }
+        for (let tag of secondaryTags) {
+            tag.classList.add("dark");
+        }
+    }
+
+    function disableDarkMode(darkModeButton, primaryTags, secondaryTags) {
+        localStorage.removeItem("darkModeEnabled");
+        darkModeButton.classList.remove("invert");
+        for (let tag of primaryTags) {
+            tag.classList.remove("dark")
+        }
+        for (let tag of secondaryTags) {
+            tag.classList.remove("dark")
+        }
+    }
+
+</script>
+</body>
+</html>
