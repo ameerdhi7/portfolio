@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
+html {
+    height: 100%;
+    font-family: 'Quicksand';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
 
 
 a {
@@ -7,10 +16,12 @@ a {
     color: white !important;
     transition: all 0.3s;
 }
-ul{
+
+ul {
     list-style: none;
 }
-ul li{
+
+ul li {
     margin-left: 1vh;
 }
 
@@ -40,36 +51,27 @@ a:hover {
 }
 
 
-html {
-    font-family: 'Quicksand';
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background: black;
-}
-
 .primary {
-    background: #196572 !important;
+    background: #638D14 !important;
     transition: all 500ms;
 }
 
 .secondary {
-    background: #b47400 !important;
+    background: #47588E !important;
     transition: all 500ms;
 }
 
 @media (min-width: 768px) {
-    .title{
+    .title {
         font-size: 4rem !important;
     }
 
-    .intro-text{
+    .intro-text {
         font-size: 1.5em;
         line-height: 6vh;
     }
-    .lottie{
+
+    .lottie {
         margin-left: 7vh;
         margin-top: 6vh;
         height: 600px;
@@ -78,49 +80,57 @@ body {
 }
 
 @media (max-width: 576px) {
-    ul li{
-        margin-left:3vh ;
-        margin-right:3vh ;
+    ul li {
+        margin-left: 3vh;
+        margin-right: 3vh;
     }
-    .title{
-        margin-top: 68vh ;
+
+    .title {
+        margin-top: 10vh;
+        margin-bottom: 1vh;
     }
 }
 
 
 @media (min-width: 992px) {
-    .title{
-        margin-top:20vh ;
+    .title {
+        margin-top: 20vh;
         font-size: 4rem !important;
     }
-    .intro-text{
+
+    .intro-text {
         font-size: 1.5em;
         line-height: 6vh;
     }
-    .lottie{
+
+    .lottie {
         height: 600px;
         width: 600px;
         margin-left: 9vh;
     }
 
 }
-.white-background{
+
+.white-background {
     background: white !important;
     color: white !important;
 }
-.dark{
+
+.dark {
     background: black !important;
 }
-.icon-hover{
+
+.icon-hover {
     transition: all 300ms;
     width: 35px;
     height: 35px;
 }
-.icon-hover:hover{
+
+.icon-hover:hover {
     width: 50px;
     height: 50px;
 }
-.invert{
+.invert {
     filter: invert(1);
 }
 
