@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@ameerdhi7</title>
     <meta property="og:title" content="ameer dhiaa portfolio">
-    <meta property="og:description" content="full stack web developer">
-    <meta property="og:image"
-          content="https://image.freepik.com/free-vector/programmer-s-workplace-writing-code-laptop_80328-238.jpg">
+    <meta property="og:description" content="full stack web developer, laravel and vue">
     <meta property="og:url" content="https://ameerdhi7.github.io/portfolio/">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@0.7.4/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
@@ -29,12 +27,13 @@
         </a>
     </li>
     <li class="lg:mx-16">
-        <a target="_blank" href="">
-            <img class="icon-hover" src="assets/icons/social/youtube.svg" alt="">
+        <a target="_blank" href="https://www.linkedin.com/in/ameerdhi7/">
+            <img class="icon-hover" src="assets/icons/social/linkedin.svg" alt="">
         </a>
     </li>
-    <li class="lg:mx-16"><a target="_blank" href="">
-            <img class="icon-hover" src="assets/icons/social/insta.svg" alt="">
+    <li class="lg:mx-16">
+        <a target="_blank" href="">
+            <img class="icon-hover" src="assets/icons/social/youtube.svg" alt="">
         </a>
     </li>
 </ul>
@@ -47,13 +46,15 @@
              class="items-center sm:w-full w-full sm:w-full lg:w-1/2">
             <h1 class="text-center text-white mt-16  title">Hey there!</h1>
             <p class="text-white intro-text text-lg lg:text-2xl mx-3 ">
-                i'm a full-stack web developer aim to develop
-                and create web applications
-                mainly with Laravel PHP framework, have a very good knowledge to produce modern user interfaces with
+                AMEER DHIAA is a full-stack web developer aims to develop
+                and empower web applications
+                mainly using Laravel PHP framework,
+                i have worked with many backend aspects and core concepts such as API design and authentication
+                techniques, scheme design, consume ORM benefits, Caching, i also
+                have a very good knowledge to produce modern user interfaces with
                 user
-                experience UX using modern Frameworks such as Vue.js ,
-                Tailwind CSS, Bootstrap, Webpack, Blade view engine, I
-                also create Restful APIS to manage resources stored in the database.
+                experience UX using modern Frameworks such as Vue.js, Nuxt.js,
+                Tailwind CSS, Bootstrap, Webpack, Blade view engine.
             </p>
             <a target="_blank" href="https://resume.io/r/nOBCVDTsC" id="resume-button"
                class="p-3 border-white  hover:rounded-b-full d-inline-block secondary  mt-3 rounded-lg text-white  mb-2">Open
@@ -80,6 +81,7 @@
     function enableDarkMode(darkModeButton, primaryTags, secondaryTags) {
         localStorage.setItem("darkModeEnabled", true);
         darkModeButton.classList.add("invert");
+        document.getElementById("resume-button").classList.add("white-resume");
         for (let tag of primaryTags) {
             tag.classList.add("dark");
         }
@@ -91,6 +93,7 @@
     function disableDarkMode(darkModeButton, primaryTags, secondaryTags) {
         localStorage.removeItem("darkModeEnabled");
         darkModeButton.classList.remove("invert");
+        document.getElementById("resume-button").classList.remove("white-resume");
         for (let tag of primaryTags) {
             tag.classList.remove("dark")
         }
