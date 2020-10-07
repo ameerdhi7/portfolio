@@ -80,14 +80,14 @@ a:hover {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 568px) {
     ul li {
         margin-left: 3vh;
         margin-right: 3vh;
     }
 
     .title {
-        margin-top: 70%;
+        margin-top: 100%;
         margin-bottom: 1vh;
     }
 }
