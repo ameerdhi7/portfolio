@@ -37,12 +37,12 @@
         </a>
     </li>
 </ul>
-<main class="">
+<div class="">
     <button id="dark-toggle" onclick="handleDarkMode()" class="p-3  fixed  border-white rounded-lg text-white">
         <img src="assets/icons/dark-button.svg" alt="" width="30px">
     </button>
-    <div class="flex min-h-screen primary text-center">
-        <div style="transition: all;" class="flex flex-col items-center justify-center md:w-1/2 w-full">
+    <main class="flex min-h-screen overflow-hidden primary text-center">
+        <section style="transition: all;" class="flex flex-col items-center justify-center md:w-1/2 w-full">
             <h1 class="text-center md:text-7xl text-5xl font-bold text-white">Hey there!</h1>
             <p class="intro-text lg:text-2xl mx-3 my-6 text-lg text-white">
                 Ameer dheyaa is a full-stack web developer aims to develop
@@ -58,15 +58,15 @@
             <a target="_blank" href="https://resume.io/r/nOBCVDTsC" id="resume-button" class="border-white capitalize d-inline-block hover:rounded-b-full mb-2 p-3 rounded-lg secondary text-white">open
                 my resume
             </a>
-        </div>
-        <div class="justify-center flex-1 flex-col md:w-1/2 secondary w-0" style="
+        </section>
+        <section class="justify-center flex-1 flex-col md:w-1/2 secondary w-0" style="
     width: 0px;
 ">
             <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_r81jI1.json" background="transparent" class="lottie" speed="1" loop="" autoplay=""></lottie-player>
             <h1 class="text-white text-4xl mb-4  text-center">Ameer Dhiaa</h1>
-        </div>
-    </div>
-</main>
+        </section>
+    </main>
+</div>
 <script>
     function handleDarkMode() {
         let darkModeButton = document.getElementById("dark-toggle");
