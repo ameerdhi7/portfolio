@@ -87,21 +87,21 @@
         return [darkModeButton, primaryTags, secondaryTags, resumeButton];
    }
    
-    function toggleTheme(elements, actionType, className = "dark"){
-     for(const element of elements){
-            if(element instanceOf HTMLCollection){
-                for (let tag of element) {
-                 tag.classList.[actionType]("dark");
+   function toggleTheme(elements, actionType, className = "dark") {
+            for (const element of elements) {
+                if (element instanceof HTMLCollection) {
+                    for (let tag of element) {
+                        tag.classList[actionType](className);
+                    }
+                } else {
+                    element.classList[actionType](className);
                 }
-             }else {
-                element.classList.[actionType]("dark");
             }
         }
-    }
 
-    localStorage.hasOwnProperty("darkModeEnabled")
-            ? enabledDarkMode(...getThemeChangeableElements())
-            : enableDarkMode(...getThemeChangeableElements());
+        if (localStorage.hasOwnProperty("darkModeEnabled")) {
+            toggleTheme(getThemeChangeableElements(), "add")
+        }
 
 </script>
 </body>
