@@ -38,7 +38,7 @@
     </li>
 </ul>
 <div class="">
-    <button id="dark-toggle" onclick="handleDarkMode()" class="p-3  fixed  border-white rounded-lg text-white">
+    <button id="dark-toggle" onclick="handleToggleTheme()" class="p-3  fixed  border-white rounded-lg text-white">
         <img src="assets/icons/dark-button.svg" alt="" width="30px">
     </button>
     <main class="flex min-h-screen overflow-hidden primary text-center">
@@ -54,6 +54,7 @@
                 user
                 experience UX using modern Frameworks such as Vue.js, Nuxt.js,
                 Tailwind CSS, Bootstrap, Webpack, Blade view engine.
+                <strong class="block capitalize">reach me at <code>dhiaaback@gmail.com</code></strong>
             </p>
             <a target="_blank" href="https://resume.io/r/nOBCVDTsC" id="resume-button" class="border-white capitalize d-inline-block hover:rounded-b-full mb-2 p-3 rounded-lg secondary text-white">open
                 my resume
@@ -68,38 +69,39 @@
     </main>
 </div>
 <script>
-    function handleDarkMode() {
-        let darkModeButton = document.getElementById("dark-toggle");
-        let primaryTags = document.getElementsByClassName("primary");
-        let secondaryTags = document.getElementsByClassName("secondary");
-        localStorage.hasOwnProperty("darkModeEnabled")
-            ? disableDarkMode(darkModeButton, primaryTags, secondaryTags)
-            : enableDarkMode(darkModeButton, primaryTags, secondaryTags);
+    function handleToggleTheme() {
+        if(localStorage.hasOwnProperty("darkModeEnabled")){
+            localStorage.removeItem("darkModeEnabled");
+            toggleTheme(getStyleChangeableElements(),"remove");
+        } else {
+            localStorage.setItem("darkModeEnabled", true);
+            toggleTheme(getStyleChangeableElements(),"add");
+        }
+    }
+    
+   function getThemeChangeableElements(){
+        const darkModeButton = document.getElementById("dark-toggle");
+        const primaryTags = document.getElementsByClassName("primary");
+        const secondaryTags = document.getElementsByClassName("secondary");
+        const resumeButton = document.getElementById("resume-button").classList.add("white-resume");
+        return [darkModeButton, primaryTags, secondaryTags, resumeButton];
+   }
+   
+    function toggleTheme(elements, actionType, className = "dark"){
+     for(const element of elements){
+            if(element instanceOf HTMLCollection){
+                for (let tag of element) {
+                 tag.classList.[actionType]("dark");
+                }
+             }else {
+                element.classList.[actionType]("dark");
+            }
+        }
     }
 
-    function enableDarkMode(darkModeButton, primaryTags, secondaryTags) {
-        localStorage.setItem("darkModeEnabled", true);
-        darkModeButton.classList.add("invert");
-        document.getElementById("resume-button").classList.add("white-resume");
-        for (let tag of primaryTags) {
-            tag.classList.add("dark");
-        }
-        for (let tag of secondaryTags) {
-            tag.classList.add("dark");
-        }
-    }
-
-    function disableDarkMode(darkModeButton, primaryTags, secondaryTags) {
-        localStorage.removeItem("darkModeEnabled");
-        darkModeButton.classList.remove("invert");
-        document.getElementById("resume-button").classList.remove("white-resume");
-        for (let tag of primaryTags) {
-            tag.classList.remove("dark")
-        }
-        for (let tag of secondaryTags) {
-            tag.classList.remove("dark")
-        }
-    }
+    localStorage.hasOwnProperty("darkModeEnabled")
+            ? enabledDarkMode(...getThemeChangeableElements())
+            : enableDarkMode(...getThemeChangeableElements());
 
 </script>
 </body>
