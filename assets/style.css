@@ -26,12 +26,6 @@ ul li {
     margin-left: 1vh;
 }
 
-a:hover {
-    font-size: 1.3rem;
-    transition: all 0.4s;
-    padding: 0 0.5rem 0.5rem 0.5rem;
-}
-
 .toggle {
     display: inline-block !important;
     z-index: 10;
